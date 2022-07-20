@@ -9,40 +9,24 @@ use Nelmio\ApiDocBundle\Annotation\Model;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Routing\Annotation\Route;
+use FOS\ElasticaBundle\Finder\PaginatedFinderInterface;
+use Elastica\Util;
+
+
 
 class ProductController extends AbstractController
 {
     private ProductRepository $productRepository;
-    public  function __construct(ProductRepository  $productRepository)
+    private $finder;
+
+    public  function __construct(ProductRepository  $productRepository,PaginatedFinderInterface $finder)
     {
         $this->productRepository = $productRepository;
+        $this->finder=$finder;
     }
 
-
-
-
-
-    #[Route('/api/product',name: 'productSave', methods:['POST'])]
-
-    #[OA\Response(
-        response: 200,
-        description: 'Declare And ID',
-        content: new OA\JsonContent(
-            type: 'array',
-            items: new OA\Items(ref: new Model(type: Product::class, groups: ['full']))
-        )
-    )]
-    #[OA\Parameter(
-        name: 'order',
-        in: 'query',
-        description: 'The field used to order rewards',
-        schema: new OA\Schema(type: 'string')
-    )]
-
-    #[OA\Tag(name: 'rewards')]
-    #[Security(name: 'Bearer')]
+    #[Route('/product',name: 'productSave', methods:['POST'])]
 
 
     public function productSave(Request $request): JsonResponse
@@ -96,6 +80,18 @@ class ProductController extends AbstractController
         }
 
         return new JsonResponse('Ürün Bulunamadı! ');
+
+    }
+
+
+    #[Route('/elastic')]
+    public function denemeR(): JsonResponse
+    {
+
+        $product = $this->productRepository->findAll("elastic");
+        dump($product);
+        $result = $this->finder->find("");
+        return new JsonResponse($result);
 
     }
 }
