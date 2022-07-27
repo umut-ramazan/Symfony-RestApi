@@ -18,10 +18,10 @@ class EmailController extends AbstractController
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
     #[Route('/email', name: 'app_email')]
-    public function index(EmailTransactions $emailTransactions,Request $request,MailerInterface $mailer): Response
+    public function index(EmailTransactions $emailTransactions,Request $request): Response
     {
 
-        $deger= $emailTransactions->EmailSend($request->toArray(),$mailer);
+        $deger= $emailTransactions->EmailSend($request->toArray());
 
         if (!$deger){
             return new Response("Email Gönderilmedi");

@@ -11,13 +11,19 @@ use Symfony\Component\Mime\RawMessage;
 
  class EmailTransactions
  {
+     private MailerInterface $mailer;
+
+     public function __construct(MailerInterface $mailer)
+     {
+         $this->mailer=$mailer;
+     }
      /**
      *
      * @param  $data []
      * @return String
      * @throws \Symfony\Component\Mailer\Exception\TransportExceptionInterface
      */
-    public function  EmailSend($data,MailerInterface $mailer): String
+    public function  EmailSend($data): String
     {
         $email = (new Email())
             ->from($data['fromEmail'])
@@ -28,8 +34,7 @@ use Symfony\Component\Mime\RawMessage;
 
         try
         {
-            $mailer->send($email);
-
+            $this->mailer->send($email);
             return true;
         }
         catch (ExceptionInterface $e)
