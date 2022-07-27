@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81a840683c295274dad4968ddf80c931",
+    "content-hash": "7a4781f5c988bd3ba637f08d76bc260c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1868,16 +1868,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524"
+                "reference": "720488632c590286b88b80e62aa3d3d551ad4a50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5579edf28aee1190a798bfa5be8bc16c563bd524",
-                "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/720488632c590286b88b80e62aa3d3d551ad4a50",
+                "reference": "720488632c590286b88b80e62aa3d3d551ad4a50",
                 "shasum": ""
             },
             "require": {
@@ -1897,11 +1897,10 @@
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
-                "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5.14",
-                "predis/predis": "^1.1",
+                "predis/predis": "^1.1 || ^2.0",
                 "rollbar/rollbar": "^1.3 || ^2 || ^3",
                 "ruflin/elastica": "^7",
                 "swiftmailer/swiftmailer": "^5.3|^6.0",
@@ -1921,7 +1920,6 @@
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-                "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
@@ -1956,7 +1954,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.8.0"
             },
             "funding": [
                 {
@@ -1968,7 +1966,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-09T08:59:12+00:00"
+            "time": "2022-07-24T11:55:47+00:00"
         },
         {
             "name": "nelmio/api-doc-bundle",
@@ -2144,16 +2142,16 @@
         },
         {
             "name": "pagerfanta/pagerfanta",
-            "version": "v3.6.1",
+            "version": "v3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/BabDev/Pagerfanta.git",
-                "reference": "845c7e820c057b24abd0f17822d4c78ed06261f1"
+                "reference": "0486e63edb74e55f85485c16c31decbf65f6e432"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BabDev/Pagerfanta/zipball/845c7e820c057b24abd0f17822d4c78ed06261f1",
-                "reference": "845c7e820c057b24abd0f17822d4c78ed06261f1",
+                "url": "https://api.github.com/repos/BabDev/Pagerfanta/zipball/0486e63edb74e55f85485c16c31decbf65f6e432",
+                "reference": "0486e63edb74e55f85485c16c31decbf65f6e432",
                 "shasum": ""
             },
             "require": {
@@ -2191,12 +2189,12 @@
                 "doctrine/mongodb-odm": "^2.2.2",
                 "doctrine/orm": "^2.8",
                 "doctrine/phpcr-odm": "^1.5",
-                "friendsofphp/php-cs-fixer": "3.4.0",
+                "friendsofphp/php-cs-fixer": "^3.8",
                 "jackalope/jackalope-doctrine-dbal": "^1.6",
                 "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "1.4.10",
-                "phpstan/phpstan-phpunit": "1.0.0",
-                "phpunit/phpunit": "^9.5",
+                "phpstan/phpstan": "1.8.0",
+                "phpstan/phpstan-phpunit": "1.1.1",
+                "phpunit/phpunit": "9.5.21",
                 "ruflin/elastica": "^6.0 || ^7.0",
                 "solarium/solarium": "^5.0 || ^6.0",
                 "symfony/cache": "^4.4 || ^5.4 || ^6.0",
@@ -2236,7 +2234,7 @@
             ],
             "support": {
                 "issues": "https://github.com/BabDev/Pagerfanta/issues",
-                "source": "https://github.com/BabDev/Pagerfanta/tree/v3.6.1"
+                "source": "https://github.com/BabDev/Pagerfanta/tree/v3.6.2"
             },
             "funding": [
                 {
@@ -2244,7 +2242,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-16T22:28:15+00:00"
+            "time": "2022-07-21T23:35:12+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -11017,7 +11015,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1",
+        "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
