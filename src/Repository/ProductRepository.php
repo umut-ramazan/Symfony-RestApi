@@ -39,11 +39,11 @@ class ProductRepository extends ServiceEntityRepository
         }
     }
 
-        public function findByProduct($productId)
+        public function findByProduct($productName )
         {
             $qb=$this->createQueryBuilder('p')
-                ->andWhere('p.id = :id')
-                ->setParameter('id', $productId)
+                ->andWhere('p.productName = :name')
+                ->setParameter('name', $productName)
                 ->getQuery()
             ;
             return $qb->execute();

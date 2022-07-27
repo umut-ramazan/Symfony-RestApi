@@ -27,8 +27,6 @@ class ProductController extends AbstractController
     }
 
     #[Route('/product',name: 'productSave', methods:['POST'])]
-
-
     public function productSave(Request $request): JsonResponse
     {
         $request = $request->toArray();
@@ -85,13 +83,14 @@ class ProductController extends AbstractController
 
 
     #[Route('/elastic')]
-    public function denemeR(): JsonResponse
+    public function Elastic(): JsonResponse
     {
 
-        $product = $this->productRepository->findAll("elastic");
-        dump($product);
-        $result = $this->finder->find("");
-        return new JsonResponse($result);
+            $product = $this->productRepository->findBy(['productName' => 'gömlek 1']);
+            dump($product);
+            $result = $this->finder->find("elastic");
+            dd($result);
+            return new JsonResponse($result);
 
     }
 }
